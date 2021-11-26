@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function computerPlay() {
+            let choice = ['rock','paper','scissor'];
+            let random = Math.floor(Math.random()*3);
+            computerChoice = choice[random];
+            return computerChoice
+        }
+        function game(playerSelection, computerSelection) {
+            computerSelection = computerPlay();
+            playerSelection = prompt("Enter your choice: ");
+            playerSelection = playerSelection.toLowerCase();
+            if  ((computerSelection==='rock' && playerSelection==='paper')||(computerSelection==='scissor' && playerSelection==='paper')||(computerSelection==='paper' && playerSelection==='rock'))  {
+                console.log("Haha, you lose!");
+            }
+            else if  ((computerSelection==='rock' && playerSelection==='rock')||(computerSelection==='scissor' && playerSelection==='scissor')||(computerSelection==='paper' && playerSelection==='paper')) {
+                console.log('It\'s a draw!');
+            }
+            else if ((computerSelection==='rock' && playerSelection==='paper')||(computerSelection==='scissor' && playerSelection==='rock')||(computerSelection==='paper' && playerSelection==='scissor')) {
+                console.log("Yay, you won!");
+            }
+            
+        }
+        function newGame() {
+            game();
+            game();
+            game();
+            game();
+            game();
+            
+        }
+        newGame();
+        
+        
+    </script>
+</body>
+</html>
